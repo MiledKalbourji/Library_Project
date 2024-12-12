@@ -1,72 +1,101 @@
-<html> 
-	<h1> 
-	Welcome ladies and gentleman to my library project! 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
 
-</h1>
+        .button-container {
+            margin: 20px 0;
+        }
 
+        /* Image button style */
+        .image-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+        }
 
-<body> 
-	<p> Over the last 4 years I have explored the pattern of the students coming in and out Addams library. 
-	Each day the library staff, for every hour of every day of every week of every month, every year. 
+        .image-button img {
+            width: 150px; /* Adjust width */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, Ladies and Gentlemen, to My Library Project!</h1>
 
-	</p> 
-<h2> 
-	Point of the project: 
-</h2> 
+    <p>
+        Over the last 4 years, I have explored the patterns of students coming in and out of Addams Library.
+        Each day, the library staff collects data every hour of every day, every week, every month, every year.
+    </p>
 
-	<p>I want to give the Library a greater importance than "old books".  I want to prove the importance of Addams library. The hub that students could use to gather and share information. A hub where students can come  and relax in. 
-	<h3> How is the project going to prove this? 
-	</h3> 
-	 
-	Based on the foot traffic alone, throughout the years, months, weeks. We can see with hard data, that is increasing every year. I wanted to use 2020 as the inital year because that was the worst ecomonic year for any indsutry. I wanted to see if the library recovered.  
+    <h2>Point of the Project:</h2>
+    <p>
+        I want to give the Library a greater importance than "old books." I want to prove the importance of Addams Library
+        as a hub for students to gather, share information, and relax.
+    </p>
 
-	</p> 
+    <h3>How is the Project Going to Prove This?</h3>
+    <p>
+        Based on the foot traffic throughout the years, months, and weeks, we can use hard data to see a recovery
+        from 2020 — the worst economic year for any industry.
+    </p>
 
-<script>
-	function openImage(imagePath, description) { 
-		// create a new window 
-	const newWindow = window.open(('','_blank', 'width=800,height=600'); 
+    <div class="button-container">
+        <!-- Button 1 -->
+        <button class="image-button" onclick="openImagePage('Yearly-Review.jpg', 'For 2020,2021,2022,2023 Yearly Total Head count compare side by side.')">
+            <img src="button1.jpg" alt="Yearly Review">
+        </button>
+    </div>
 
-	// write content to the new window 
+    <script>
+        function openImagePage(imagePath, description) {
+            // Create a new window
+            const newWindow = window.open('', '_blank', 'width=800,height=600');
 
-	 newWindow.document.write(
-		 <!DOCTYPE html> 
-		 <html lang="en"> 
-		 <head>
-		 	<meta charset="UTF-8"> 
-		 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		 	<title>Image View</title>
-		 	<style> 
-				body { 
-					font=family: Arial, sans-serif; 
-					text-align: center; 
-					margin: 20px; 
-				} 
-				img { 
-					max-width: 100%;
-					height: auto; 
-					border: 1px solid #ddd; 
-					border-radius: 10px; 
-					margin-bottom: 20px;
-				} 
-			</style> 
-		 </head> 
-		 <body>
-			 <h1>Image Viewer</h1>
-			 <img src="${imagePath}" alt="Displayed Image"> 
-			 <p>${description}</p>
-		 </body> 
-		 </html>
+            // Write content to the new window
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Image Viewer</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            text-align: center;
+                            margin: 20px;
+                        }
+                        img {
+                            max-width: 100%;
+                            height: auto;
+                            border: 1px solid #ddd;
+                            border-radius: 10px;
+                            margin-bottom: 20px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>Image Viewer</h1>
+                    <img src="${imagePath}" alt="Displayed Image">
+                    <p>${description}</p>
+                </body>
+                </html>
+            `);
 
-		 ); 
-
-		 // close the document to ensure it renders 
-		 newWindow.document.close(); 
-
-	} 
-</script> 
-
-</body> 
-
-</html> 
-
+            // Close the document to ensure it renders
+            newWindow.document.close();
+        }
+    </script>
+</body>
+</html>
