@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Viewer</title>
+    <title>Library Project</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
+            text-align: auto;
             margin: 20px;
         }
 
         .button-container {
             margin: 20px 0;
+            display: flex; 
+            flex-direction: column; /* Stack buttons vertically */ 
+            align-items: center; /* center the buttons horizontally */
+            gap: 20px;  /* Adding spacing between betweens */ 
         }
 
         /* Image button style */
@@ -50,10 +54,21 @@
         from 2020 — the worst economic year for any industry.
     </p>
 
+    <body>
+    <p>Click a button to view an image and its description in a new tab.</p>
+
     <div class="button-container">
         <!-- Button 1 -->
         <button class="image-button" onclick="openImagePage('Yearly-Review.jpg', 'For 2020,2021,2022,2023 Yearly Total Head count compare side by side.')">
-            <img src="button1.jpg" alt="Yearly Review">
+            <img src="button1.jpg" alt="Yearly-Review">
+        </button>
+        <!-- Button 2 -->
+        <button class="image-button" onclick="openImagePage('Monthly-Review.jpg', 'For 2020 , 2021, 2022, 2023 Monthly Total Head. Comparing each month with there respected years, please reference key in the top. Better understanding the data.')">
+            <img src="button2.jpg" alt="Monthly-Review">
+        </button>
+        <!-- Button 3 -->
+        <button class="image-button" onclick="openImagePage('Weekly-Review.jpg', 'Throughout the years we have good weeks and bad weeks. It would look visually pleasing showing all 52 weeks in a year. Better to prove the objective the project I wanted to people understand even in a bad the library can see 4,000-5,000 during peak seasons.')">
+            <img src="button3.jpg" alt="Weekly-Review">
         </button>
     </div>
 
