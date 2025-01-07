@@ -1,90 +1,127 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Project</title>
     <style>
+        /* General body styling */
         body {
             font-family: Arial, sans-serif;
-            text-align: auto;
+            text-align: center;
             margin: 20px;
+            background-color: #FFFF00; /* Yellow background */
         }
 
-        .button-container {
-            margin: 20px 0;
-            display: flex; 
-            flex-direction: column; /* Stack buttons vertically */ 
-            align-items: center; /* center the buttons horizontally */
-            gap: 20px;  /* Adding spacing between betweens */ 
+        /* Styling for Raw-Data button */
+        .raw-data-button {
+            background-color: #DC143C; /* Crimson background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding inside the button */
+            font-size: 16px; /* Font size */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            position: fixed; /* Fixed at the bottom-left corner */
+            bottom: 20px;
+            left: 20px;
         }
 
-        /* Image button style */
-        .image-button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            outline: none;
-            padding: 0;
+        /* Hover effect for Raw-Data button */
+        .raw-data-button:hover {
+            background-color: #00FFFF; /* Cyan background on hover */
         }
 
-        .image-button img {
-            width: 150px; /* Adjust width */
-            height: auto; /* Maintain aspect ratio */
+        /* Styling for footer */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
-    <h1>Welcome, Ladies and Gentlemen, to My Library Project!</h1>
-
+    <!-- Main Content -->
+    <h1>Welcome to My Library Project!</h1>
     <p>
-        Over the last 4 months, I have explored the patterns of students coming in and out of Addams Library.
-        Each day, the library staff collects data every hour of every day, every week, every month, every year.
+        Over the last 4 months, I have explored the patterns of students coming in and out of Addams Library. 
+        The data highlights the library's importance as a hub for learning and relaxation.
     </p>
-
     <h2>Point of the Project:</h2>
     <p>
-        I want to give the Library a greater importance than "old books." I want to prove the importance of Addams Library
-        as a hub for students to gather, share information, and relax.
+        Using hard data, this project aims to showcase the recovery of Addams Library post-2020 and its value for students and the public alike.
     </p>
 
-    <h3>How is the Project Going to Prove This?</h3>
-    <p>
-        Based on the foot traffic throughout the years, months, and weeks, we can use hard data to see a recovery
-        from 2020 — the worst economic year for any industry.
-    </p> 
+    <!-- Raw-Data Button -->
+    <button class="raw-data-button" onclick="openDataMenu()">Raw-Data</button>
 
-    <h3> What is this data</h3> 
-    <p> 
-    This data is based upon the number of public, and students that inside in the library. These paterons could be doing homework, talking to there friends, having study groups, and more importantly learning about there future. 
- Here, at Addams library we pretty consistent in taking the headcount. </p> 
-    <body>
-    <p>Click a button to view an image of the raw data I collected. As well each  image has its own description to highlight  the importance of this data. </p>
-
-
-    <div class="button-container">
-        <!-- Button 1 -->
-        <button class="image-button" onclick="openImagePage('Yearly-Review.JPG', '', 'For 2020,2021,2022,2023 Yearly Total Head count compare side by side.')">
-            <img src="button1.jpg" alt="Yearly-Review">
-        </button>
-        <!-- Button 2 -->
-        <button class="image-button" onclick="openImagePage('Monthly-Review.JPG','' ,'For 2020 , 2021, 2022, 2023 Monthly Total Head. Comparing each month with there respected years, please reference key in the top. Better understanding the data.')">
-            <img src="button2.jpg" alt="Monthly-Review">
-        </button>
-        <!-- Button 3 -->
-        <button class="image-button" onclick="openImagePage('Weekly-Review.JPG', 'Weekly-Review2.JPG','Throughout the years we have good weeks and bad weeks. It would look visually pleasing showing all 52 weeks in a year. Better to prove the objective the project I wanted to people understand even in a bad the library can see 4,000-5,000 during peak seasons.')">
-            <img src="button3.jpg" alt="Weekly-Review">
-        </button>
-    </div>
-
+    <!-- JavaScript Section -->
     <script>
-        function openImagePage(imagePath1, imagePath2, description) {
-            // Create a new window
-            const newWindow = window.open('', '_blank', 'width=800,height=600');
+        /**
+         * Function to open a popup with 3 data options
+         */
+        function openDataMenu() {
+            const dataWindow = window.open('', '_blank', 'width=400,height=300');
 
-            // Write content to the new window
-            newWindow.document.write(`
+            // Write content for the popup
+            dataWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Data Options</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            text-align: center;
+                            margin-top: 50px;
+                        }
+                        button {
+                            margin: 10px;
+                            padding: 10px 20px;
+                            font-size: 14px;
+                            color: white;
+                            background-color: #007BFF;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+                        button:hover {
+                            background-color: #0056b3;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h2>Select Data Type</h2>
+                    <button onclick="window.opener.openImagePage('Yearly-Review.JPG', '', 'Yearly Review: Comparing yearly headcounts.')">Yearly-Review</button>
+                    <button onclick="window.opener.openImagePage('Monthly-Review.JPG', '', 'Monthly Review: Insights for each month.')">Monthly-Review</button>
+                    <button onclick="window.opener.openImagePage('Weekly-Review.JPG', 'Weekly-Review2.JPG', 'Weekly Review: Comparing weekly trends.')">Weekly-Review</button>
+                </body>
+                </html>
+            `);
+
+            dataWindow.document.close();
+        }
+
+function openImagePage(imagePath1, imagePath2, description) { 
+	const newWindow = window.open("",'_blank', 'width=800,height=600');
+
+	// Write HTML content into the new window 
+
+	newWindow.document.write(`
                 <!DOCTYPE html>
                 <html lang="en">
                 <head>
@@ -97,36 +134,47 @@
                             text-align: center;
                             margin: 20px;
                         }
+			.button-container { 
+				display: flex; 
+				flex-direction: column; 
+				align-items: center; 
+				gap: 20px; 
+			} 
                         img {
-                            max-width: 100%;
+                            max-width: 80%;
                             height: auto;
                             border: 1px solid #ddd;
                             border-radius: 10px;
                             margin-bottom: 20px;
                         }
+                        p {
+                            font-size: 16px;
+                            color: #555;
+                        }
                     </style>
                 </head>
                 <body>
                     <h1>Library Project</h1>
+		    <div class="button-container">
                     <img src="${imagePath1}" alt="Displayed Image 1">
-		    <p>${description}</p>
-		    ${imagePath2 ? `<img src="${imagePath2}" alt="Displayed Image 2">` : ''}
+                    ${imagePath2 ? `<img src="${imagePath2}" alt="Displayed Image 2">` : ''}
+		    </div> 
+			    <p>${description}</p> }
                 </body>
                 </html>
             `);
 
-            // Close the document to ensure it renders
             newWindow.document.close();
         }
     </script>
-    <footer> 
-	    <div class="footer-content"> 
-		    <p>&copy; 2024 Addams Libarry Project. All rights reserved. </p>
 
-		    <p> 
-		    View the project on <a href="https://github.com/MiledKalbourji/Library_Project" target="_blank">Github</a>.
-		    </p>
-	</div>
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Addams Library Project. All rights reserved.</p>
+        <p>
+            View the project on 
+            <a href="https://github.com/MiledKalbourji/Library_Project" target="_blank">Github</a>.
+        </p>
     </footer>
 </body>
 </html>
