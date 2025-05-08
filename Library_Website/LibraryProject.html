@@ -31,8 +31,25 @@
         /* Hover effect for Raw-Data button */
         .raw-data-button:hover {
             background-color: #00FFFF; /* Cyan background on hover */
-        }
-
+        } 
+        
+        /* styling for Predicted-Models-Button */ 
+        .predicted-models-button { 
+            background-color :#DC143C; 
+            color: white;
+            border: none;
+            padding: 10px 20px; 
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            bottom:20px; 
+            right: 150px;
+ 
+        } 
+        /* Hover effect for predicted-models-button */ 
+        .predicted-models-button:hover { 
+            background: ;
         /* Styling for footer */
         footer {
             margin-top: 50px;
@@ -64,8 +81,9 @@
         Using hard data, this project aims to showcase the recovery of Addams Library post-2020 and its value for students and the public alike.
     </p>
 
-    <!-- Raw-Data Button -->
+    <!-- Raw-Data Button/Predicted-Models-Button -->
     <button class="raw-data-button" onclick="openDataMenu()">Raw-Data</button>
+    <button class="predicted-models-button" onclick="openPredictedMenu()">Predicted Models</button>
 
     <!-- JavaScript Section -->
     <script>
@@ -114,6 +132,48 @@
             `);
 
             dataWindow.document.close();
+        }
+
+        function openPredictedMenu() { 
+            const predictedWindow = window.open('','_blank', 'width=400','height=300');
+            
+            predictedWindow.document.write(` 
+            <!DOCTYPE html> 
+            <html lang="en"> 
+            <head>
+                    <meta charset="UTF-8">
+                    <meta name ="viewport" content="width=device-width, initial-scale=1.0"
+                    <title>Predicted Model</title>
+                    <style> 
+                        body {
+                            font-family: Arial, sans-serif; 
+                            text-align: center; 
+                            margin-top: 50px; 
+                        }
+                        button {
+                            margin: 10px; 
+                            padding: 10px 20px; 
+                            font-size; 14px;
+                            color: white; 
+                            background-color: #007BFF; 
+                            border: none; 
+                            border-radius: 5px; 
+                            cursor:pointer; 
+                        }
+                        button:hover { 
+                            background-color: #0056b3; 
+                        }
+                        </style> 
+                    </head> 
+                    <body>
+                        <h2>Select Predicted Data</h2> 
+                        <button onclick="window.opener.openImagePage('3-Prediction-Yearly.JPG', '', 'Predicted Data: 3-year projections.')">3-Year-Prediction</button> 
+			<button onclick="window.opener.openImagePage('5-Prediction-Yearly.JPG', '', 'Predicited Data: 5-year projections')">5-Year-Prediction</button> 
+			<button onclick="window.opener.openImagePage('10-Prediction-Yearly.JPG', '', 'Predicted Data: 10-year projections')">10-year-Prediction</button>
+		    </body>
+                    </html>
+                    `); 
+                    predictedWindow.document.close(); 
         }
 
 function openImagePage(imagePath1, imagePath2, description) { 
