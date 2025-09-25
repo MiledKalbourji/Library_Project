@@ -6,7 +6,7 @@ Machine Learning Library Project
 # Steps on Getting Data Visualization Section 
 
 -----| Graphics Folder 
-------------> Weekly.ipynb (data visualization for raw data has graphs)
+-----------| Weekly.ipynb (data visualization for raw data has graphs) --------| 
 ------------>  Monthly.ipynb (data visualization for raw data has graphs)
 ------------>  Yearly.ipynb  (data visualization for raw data has graphs)
 
